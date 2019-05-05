@@ -18,8 +18,16 @@ const user={
 
 class Header extends React.Component{
 
+    state ={
+        keywords:'Hello'
+    }
+
     inputChangeHandler(event){
-        console.log(event.target.value)
+        this.setState(
+            {
+                keywords:event.target.value
+            }
+        )
     }
 
     render(){
@@ -31,7 +39,7 @@ class Header extends React.Component{
 
                 <p>How to survive without money!</p>
                     
-                <input type="text" onChange={this.inputChangeHandler}></input>
+                <input type="text" onChange={this.props.keywords}></input>
             </header>
         )
     }
